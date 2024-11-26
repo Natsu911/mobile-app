@@ -2,17 +2,17 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
-    android:title="Home" />
+    android:title="@string/home" />
     <item
         android:id="@+id/bookHistoryFragment"
         android:icon="@drawable/ic_history"
-    android:title="History" />
+    android:title="@string/history" />
     <item
         android:id="@+id/supportFragment"
         android:icon="@drawable/ic_support"
-    android:title="Support" />
+    android:title="@string/support" />
     <item
         android:id="@+id/accountFragment"
         android:icon="@drawable/ic_account"
-    android:title="Account" />
+    android:title="@string/account" />
 </menu>

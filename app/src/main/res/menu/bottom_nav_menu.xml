@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+    android:title="Home" />
+    <item
+        android:id="@+id/bookHistoryFragment"
+        android:icon="@drawable/ic_history"
+    android:title="History" />
+    <item
+        android:id="@+id/supportFragment"
+        android:icon="@drawable/ic_support"
+    android:title="Support" />
+    <item
+        android:id="@+id/accountFragment"
+        android:icon="@drawable/ic_account"
+    android:title="Account" />
+</menu>

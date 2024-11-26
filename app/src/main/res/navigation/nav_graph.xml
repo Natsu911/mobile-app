@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="kh.edu.rupp.ite.mobileapp.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/bookHistoryFragment"
+        android:name="kh.edu.rupp.ite.mobileapp.BookHistoryFragment"
+        android:label="Book History"
+        tools:layout="@layout/fragment_book_history" />
+
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="kh.edu.rupp.ite.mobileapp.SupportFragment"
+        android:label="Support"
+        tools:layout="@layout/fragment_support" />
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="kh.edu.rupp.ite.mobileapp.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" />
+</navigation>

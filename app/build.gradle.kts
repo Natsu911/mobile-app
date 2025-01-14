@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "kh.edu.rupp.ite.ebooking"
+    namespace = "kh.edu.rupp.ite.mobileapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "kh.edu.rupp.ite.ebooking"
+        applicationId = "kh.edu.rupp.ite.mobileapp"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -26,6 +26,11 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -48,5 +53,13 @@ dependencies {
     //Navigation
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.3")
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.3")
+
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
+    testImplementation ("junit:junit:4.13.2")
+
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 
 }

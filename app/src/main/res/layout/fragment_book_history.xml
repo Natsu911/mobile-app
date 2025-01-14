@@ -4,11 +4,9 @@
     android:layout_height="match_parent"
     tools:context="kh.edu.rupp.ite.mobileapp.BookHistoryFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewBookingHistory"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Book History"
-        android:gravity="center" />
-
-
+        android:padding="16dp" />
 </FrameLayout>

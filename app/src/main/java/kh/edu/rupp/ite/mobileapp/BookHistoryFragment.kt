@@ -5,57 +5,43 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kh.edu.rupp.ite.mobileapp.R
+import kh.edu.rupp.ite.mobileapp.BookingHistoryAdapter
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [BookHistoryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BookHistoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: BookingHistoryAdapter
+    private val bookingList = mutableListOf<Booking>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_book_history, container, false)
+        val view = inflater.inflate(R.layout.fragment_book_history, container, false)
+
+        // Initialize RecyclerView
+        recyclerView = view.findViewById(R.id.recyclerViewBookingHistory)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        adapter = BookingHistoryAdapter(bookingList)
+        recyclerView.adapter = adapter
+
+        // Load booking data
+        loadBookingHistory()
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BookHistoryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BookHistoryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun loadBookingHistory() {
+        // Example data
+        bookingList.add(Booking("Royal Place", "2024-12-23", "Completed", "4300៛"))
+        bookingList.add(Booking("Aeon Mall", "2024-12-16", "Completed", "9800៛"))
+        bookingList.add(Booking("River Side", "2025-11-29", "Cancelled", "Cancelled"))
+
+        adapter.notifyDataSetChanged()
     }
+
 }
